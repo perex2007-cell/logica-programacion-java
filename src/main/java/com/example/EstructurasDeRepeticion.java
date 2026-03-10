@@ -37,35 +37,25 @@ public class EstructurasDeRepeticion {
         System.out.println("for anidado -> ¡Terminado!\n");
     }
 
-public static void ejemploBreak() {
-        int[] numeros = {3, 7, 9, 12, 15};
-        int buscar = 12;
-        boolean encontrado = false;
 
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.println("break -> revisando índice " + i);
-            if (numeros[i] == buscar) {
-                System.out.println("break -> encontrado " + buscar + " en índice " + i);
-                encontrado = true;
-                break; // sale del for
-            }
-        }
+public static void ejemploBreakContinue() {
 
-        if (!encontrado) {
-            System.out.println("break -> valor no encontrado");
-        }
-        System.out.println("break -> ¡Terminado!\n");
-    }
-
- public static void ejemploContinue() {
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= 10; i++) {
             if (i % 2 == 0) {
-                continue; // salta el resto y va a la siguiente iteración
+                System.out.println("continue -> " + i + " es par, se salta.");
+                continue;
             }
-            System.out.println("continue -> i impar = " + i);
+            if (i == 7) {
+                System.out.println("break -> encontrado 7, se termina el ciclo.");
+                break;
+            }
+
+            System.out.println("Numero impar procesado: " + i);
         }
-        System.out.println("continue -> ¡Terminado!\n");
+
+        System.out.println("ejemploBreakContinue -> ¡Terminado!\n");
     }
-
-
 }
+
+
+
