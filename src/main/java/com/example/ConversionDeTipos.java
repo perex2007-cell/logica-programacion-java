@@ -2,58 +2,47 @@ package com.example;
 
 public class ConversionDeTipos {
     public static void main(String[] args) {
-        conversionImplicita();
-        conversionExplicita();
-        stringANumerico();
-        numericoAString();
-        charAInt();
+        demostrarCastingImplicito();
+        demostrarCastingExplicito();
+        demostrarProblemasDePrecision();
     }
 
-    public static void conversionImplicita() {
-        int miEntero = 9;
-        double miDouble = miEntero;
-        System.out.println("--- Conversión Implícita ---");
-        System.out.println("Entero: " + miEntero);
-        System.out.println("Double: " + miDouble);
+    public static void demostrarCastingImplicito() {
+        int entero = 100;
+        long largo = entero; // De int a long (automático)
+        double decimal = largo; // De long a double (automático)
+
+        System.out.println("--- Casting Implícito (Ampliación) ---");
+        System.out.println("Valor entero: " + entero);
+        System.out.println("Valor long: " + largo);
+        System.out.println("Valor double: " + decimal);
         System.out.println();
     }
 
-    public static void conversionExplicita() {
-        double otroDouble = 9.78d;
-        int otroEntero = (int) otroDouble;
-        System.out.println("--- Conversión Explícita ---");
-        System.out.println("Double original: " + otroDouble);
-        System.out.println("Entero convertido: " + otroEntero);
+    public static void demostrarCastingExplicito() {
+        double decimal = 9.99;
+        int entero = (int) decimal; // De double a int (truncamiento manual)
+
+        System.out.println("--- Casting Explícito (Reducción) ---");
+        System.out.println("Valor double: " + decimal);
+        System.out.println("Valor int (después de casting): " + entero);
         System.out.println();
     }
 
-    public static void stringANumerico() {
-        String textoNumero = "123";
-        int numeroDesdeTexto = Integer.parseInt(textoNumero);
-        String textoDouble = "45.67";
-        double doubleDesdeTexto = Double.parseDouble(textoDouble);
-        System.out.println("--- String a Numérico ---");
-        System.out.println("String '123' a int: " + numeroDesdeTexto);
-        System.out.println("String '45.67' a double: " + doubleDesdeTexto);
-        System.out.println();
-    }
+    public static void demostrarProblemasDePrecision() {
+        // Ejemplo 1: Truncamiento
+        double grande = 123.456789;
+        float reducido = (float) grande;
 
-    public static void numericoAString() {
-        int edad = 25;
-        String edadTexto = String.valueOf(edad);
-        String edadTexto2 = edad + "";
-        System.out.println("--- Numérico a String ---");
-        System.out.println("Valor '25' como String (método 1): " + edadTexto);
-        System.out.println("Valor '25' como String (método 2): " + edadTexto2);
-        System.out.println();
-    }
+        // Ejemplo 2: Desbordamiento (Overflow)
+        int numeroGrande = 1000000;
+        byte convertidoAByte = (byte) numeroGrande;
 
-    public static void charAInt() {
-        char miCaracter = 'A';
-        int codigoAscii = miCaracter;
-        System.out.println("--- Caracter a ASCII ---");
-        System.out.println("Caracter: " + miCaracter);
-        System.out.println("Código ASCII: " + codigoAscii);
+        System.out.println("--- Problemas de Precisión y Desbordamiento ---");
+        System.out.println("Double original: " + grande);
+        System.out.println("Float reducido (pérdida de precisión): " + reducido);
+        System.out.println("Int original: " + numeroGrande);
+        System.out.println("Byte convertido (desbordamiento): " + convertidoAByte);
         System.out.println();
     }
 }

@@ -1,15 +1,15 @@
 package com.example;
 
 public class ArreglosUnidimensionales {
-    
- public static void declararCrearInicializar() {
+
+    public static void declararCrearInicializar() {
         System.out.println(">> ejemploDeclararCrearInicializar()");
 
         int[] numeros = new int[5]; // [0, 0, 0, 0, 0]
         numeros[0] = 10;
         numeros[1] = 20; // ahora [10, 20, 0, 0, 0]
 
-        String[] frutas = {"Manzana", "Banana", "Cereza"};
+        String[] frutas = { "Manzana", "Banana", "Cereza" };
 
         System.out.println("numeros[0] = " + numeros[0]);
         System.out.println("numeros[1] = " + numeros[1]);
@@ -19,17 +19,17 @@ public class ArreglosUnidimensionales {
 
         System.out.println("ejemploDeclararCrearInicializar -> ¡Terminado!\n");
     }
-    
-public static void mostrarLongitud() {
+
+    public static void mostrarLongitud() {
         System.out.println(">> mostrarLongitud()");
-        double[] precios = {9.99, 14.5, 3.75, 20.0};
+        double[] precios = { 9.99, 14.5, 3.75, 20.0 };
         System.out.println("La longitud del arreglo 'precios' es: " + precios.length);
         System.out.println("mostrarLongitud -> ¡Terminado!\n");
     }
-    
-public static void recorrerConForClasico() {
+
+    public static void recorrerConForClasico() {
         System.out.println(">> ejemploForClasico()");
-        int[] pares = {2, 4, 6, 8, 10};
+        int[] pares = { 2, 4, 6, 8, 10 };
 
         for (int i = 0; i < pares.length; i++) {
             System.out.println("pares[" + i + "] = " + pares[i]);
@@ -38,9 +38,9 @@ public static void recorrerConForClasico() {
         System.out.println("ejemploForClasico -> ¡Terminado!\n");
     }
 
-public static void recorrerConForEach() {
+    public static void recorrerConForEach() {
         System.out.println(">> ejemploForEach()");
-        String[] nombres = {"Ana", "Luis", "Marta"};
+        String[] nombres = { "Ana", "Luis", "Marta" };
 
         for (String nombre : nombres) {
             System.out.println("Nombre: " + nombre);
@@ -49,10 +49,10 @@ public static void recorrerConForEach() {
         System.out.println("ejemploForEach -> ¡Terminado!\n");
     }
 
-public static void arrayComoParametroYRetorno() {
+    public static void arrayComoParametroYRetorno() {
         System.out.println(">> arrayComoParametroYRetorno()");
 
-        int[] original = {1, 2, 3, 4};
+        int[] original = { 1, 2, 3, 4 };
         System.out.print("Original -> ");
         imprimirArray(original);
 
@@ -63,4 +63,19 @@ public static void arrayComoParametroYRetorno() {
         imprimirArray(transformado);
 
     }
-    
+
+    public static void imprimirArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + (i == array.length - 1 ? "" : ", "));
+        }
+        System.out.println();
+    }
+
+    public static int[] duplicarElementos(int[] array) {
+        int[] resultado = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            resultado[i] = array[i] * 2;
+        }
+        return resultado;
+    }
+}

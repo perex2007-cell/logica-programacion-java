@@ -1,17 +1,17 @@
 package com.example;
 
 public class EstructurasDeRepeticion {
-    
-    public static void ejemploWhile {
-         int n = 5;     
-         while (n > 0) {
+
+    public static void ejemploWhile() {
+        int n = 5;
+        while (n > 0) {
             System.out.println("while -> n = " + n);
             n--;
-         }
-         System.out.println("while -> ¡Terminado!\n");
+        }
+        System.out.println("while -> ¡Terminado!\n");
     }
-    
-  public static void ejemploDoWhile() {
+
+    public static void ejemploDoWhile() {
         int n = 0;
         do {
             System.out.println("do-while -> n = " + n);
@@ -19,15 +19,15 @@ public class EstructurasDeRepeticion {
         } while (n < 3);
         System.out.println("do-while -> ¡Terminado!\n");
     }
-    
-   public static void ejemploForClasico() {
+
+    public static void ejemploForClasico() {
         for (int i = 0; i < 5; i++) {
             System.out.println("for -> i = " + i);
         }
         System.out.println("for -> ¡Terminado!\n");
     }
 
-   public static void ejemploForAnidado() {
+    public static void ejemploForAnidado() {
         for (int fila = 1; fila <= 3; fila++) {
             for (int col = 1; col <= 3; col++) {
                 System.out.print((fila * col) + "\t");
@@ -37,8 +37,7 @@ public class EstructurasDeRepeticion {
         System.out.println("for anidado -> ¡Terminado!\n");
     }
 
-
-public static void ejemploBreakContinue() {
+    public static void ejemploBreakContinue() {
 
         for (int i = 1; i <= 10; i++) {
             if (i % 2 == 0) {
@@ -56,6 +55,3 @@ public static void ejemploBreakContinue() {
         System.out.println("ejemploBreakContinue -> ¡Terminado!\n");
     }
 }
-
-
-
