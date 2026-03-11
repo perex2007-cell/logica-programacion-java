@@ -2,7 +2,6 @@ package com.example;
 
 public class VariablesYConstantes {
     public static void demostrarDeclaracionAsignacion(String[] args) {
-        // Declaración de una variable
         int numero = 30;
         for (int i = 2; i <= 30; i+= 2) {
             System.out.println(i);
