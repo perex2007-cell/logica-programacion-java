@@ -78,5 +78,19 @@ public class Main {
         MetodosEstaticosSimples.ejemploPasoParametros();
         MetodosEstaticosSimples.ejemploRetornoValores();
         MetodosEstaticosSimples.ejemploSobrecarga();
+
+         // --- Arreglos Bidimensionales ---
+        System.out.println("=== 10. ARREGLOS BIDIMENSIONALES ===");
+        ArreglosBidimensionales.main(args);
+        System.out.println();
+
+        // --- Manipulación de Cadenas ---
+        System.out.println("=== 11. MANIPULACIÓN DE CADENAS ===");
+        ManipulacionCadenas.main(args);
+        System.out.println();
+
+        // --- Manejo Básico de Excepciones ---
+        System.out.println("=== 12. MANEJO BÁSICO DE EXCEPCIONES ===");
+        ManejoBasicoExcepciones.main(args);
     }
 }
